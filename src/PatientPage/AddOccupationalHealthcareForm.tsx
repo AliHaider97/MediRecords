@@ -1,6 +1,6 @@
 import React from "react";
 import { Field, Formik, Form } from "formik";
-import { Button, Grid } from "semantic-ui-react";
+import { Button, FormTextArea, Grid } from "semantic-ui-react";
 
 import { useStateValue } from "../state";
 import { EntryFormOccupationalHealthcareValues } from "../types";
@@ -105,6 +105,19 @@ const AddOccupationalHealthcareForm = ({ onSubmit, onCancel }: Props) => {
             />
 
             <Grid>
+            <Field
+              label="PatientHistory"
+              placeholder="history"
+              name="patientHistory"
+              component={FormTextArea}
+            />
+
+            <Grid>
+              <Grid.Column floated="left" width={5}>
+                <Button type="button" onClick={onCancel} color="red">
+                  Cancel
+                </Button>
+              </Grid.Column>
               <Grid.Column floated="right" width={5}>
                 <Button
                   type="submit"
