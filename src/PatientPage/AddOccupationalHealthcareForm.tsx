@@ -103,6 +103,8 @@ const AddOccupationalHealthcareForm = ({ onSubmit, onCancel }: Props) => {
               name="sickLeave.endDate"
               component={TextField}
             />
+
+            <Grid>
             <Field
               label="PatientHistory"
               placeholder="history"
@@ -125,6 +127,14 @@ const AddOccupationalHealthcareForm = ({ onSubmit, onCancel }: Props) => {
                 >
                   Add
                 </Button>
+              </Grid.Column>
+              <Grid.Column floated="left" width={5}>
+                <Button type="button" onClick={onCancel} color="red">
+                  Cancel
+                </Button>
+              </Grid.Column>
+              <Grid.Column>
+                <Button>Complete</Button>
               </Grid.Column>
             </Grid>
           </Form>
