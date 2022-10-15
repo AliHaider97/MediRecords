@@ -1,7 +1,7 @@
-import React from 'react';
-import { Modal, Segment } from 'semantic-ui-react';
-import AddPatientForm, { PatientFormValues } from './AddPatientForm';
-
+import React from "react";
+import { Modal, Segment } from "semantic-ui-react";
+import AddPatientForm, { PatientFormValues } from "./AddPatientForm";
+import MediRecordFooter from "./components";
 interface Props {
   modalOpen: boolean;
   onClose: () => void;
@@ -16,6 +16,9 @@ const AddPatientModal = ({ modalOpen, onClose, onSubmit, error }: Props) => (
       {error && <Segment inverted color="red">{`Error: ${error}`}</Segment>}
       <AddPatientForm onSubmit={onSubmit} onCancel={onClose} />
     </Modal.Content>
+    <Modal.Dimmer>
+      <MediRecordFooter />
+    </Modal.Dimmer>
   </Modal>
 );
 
